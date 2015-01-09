@@ -4,7 +4,7 @@
 
 #####Social blogging app template with on material-design based UI. HTML and JSON backend provide by Flask and SQLAlchemy.
 
-![Material Design gif](https://d13yacurqjgara.cloudfront.net/users/268236/screenshots/1640866/alarm_material_ui.gif, "Material Design")
+![alt text](http://material-design.storage.googleapis.com/publish/v_2/material_ext_publish/0Bx4BSt6jniD7QTA5cHFBUlV3RTA/materialdesign_goals_language.png, "Material Design")
 
 # Bootstrap the app
 
@@ -41,12 +41,19 @@
 
 # Prep. DB
 ./manage.py db init
+
 ./manage.py db migrate
+
 ./manage.py db upgrade
+
 ./manage.py shell
+
 Role.insert_roles()
+
 User.generate_fake(100)
+
 Post.generate_fake(100)
+
 User.add_self_follows()
 
 # export Env Vars
