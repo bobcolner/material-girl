@@ -7,3 +7,4 @@ coverage
 httpie
 requests
 selenium
+flask-debugtoolbar
