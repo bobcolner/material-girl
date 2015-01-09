@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         dev: {
             files: {
                 // destination        // source file
-                "public/styles.css" : "sass/styles.scss"
+                "public/styles.css" : "sass/material_styles.scss"
             }
         }
     },
