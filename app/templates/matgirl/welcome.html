@@ -1,93 +1,105 @@
 <!doctype html>
 <html>
-
-<head>
-  <meta charset="utf-8">  
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Analytics Campaign Insight Metrics Marketing mix optimization roi forecasting data science">
-  <title>QuantClarity | Performance marketing analytics | marketing mix optimization</title>
-  <!-- Add to homescreen for Chrome on Android -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#303F9F">
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <!-- Conditionally load WC polyfill -->
-  <script>
-    if ('registerElement' in document
-      && 'createShadowRoot' in HTMLElement.prototype
-      && 'import' in document.createElement('link')
-      && 'content' in document.createElement('template')) {      
-      console.log("native WC support")
-    } else {
-      // Load wc.js polyfill
-      console.log("loading webcomponents.js")
-      document.write('<script src="cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.5.2/webcomponents.min.js"><\/script>');
-    }
-  </script>
-  <!-- import html5 custom elements -->
-  <link rel="import" href="{{ url_for('static', filename='bower_components/font-roboto/roboto.html') }}">
-  <link rel="import" href="{{ url_for('static', filename='bower_components/core-toolbar/core-toolbar.html') }}">
-  <link rel="import" href="{{ url_for('static', filename='bower_components/core-menu/core-menu.html') }}">
-  <link rel="import" href="{{ url_for('static', filename='bower_components/core-item/core-item.html') }}">
-  <link rel="import" href="{{ url_for('static', filename='bower_components/core-header-panel/core-header-panel.html') }}">
-  <link rel="import" href="{{ url_for('static', filename='bower_components/core-scroll-header-panel/core-scroll-header-panel.html') }}">
-  <link rel="import" href="{{ url_for('static', filename='bower_components/core-drawer-panel/core-drawer-panel.html') }}">
-  <link rel="import" href="{{ url_for('static', filename='bower_components/core-scaffold/core-scaffold.html') }}">
-  <link rel="import" href="{{ url_for('static', filename='bower_components/core-icons/core-icons.html') }}">
-  <link rel="import" href="{{ url_for('static', filename='bower_components/paper-icon-button/paper-icon-button.html') }}">
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-  <![endif]-->
-  {% block styles %}{% endblock styles %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.min.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='public/styles.css') }}">
-
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Analytics Campaign Insight Metrics Marketing mix optimization roi forecasting data science">
+        <title>QuantClarity | Performance marketing analytics | marketing mix optimization</title>
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#303F9F">
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- Conditionally load WC polyfill -->
+        <script>
+        if ('registerElement' in document
+        && 'createShadowRoot' in HTMLElement.prototype
+        && 'import' in document.createElement('link')
+        && 'content' in document.createElement('template')) {
+        console.log("native WC support")
+        } else {
+        // Load wc.js polyfill
+        console.log("loading webcomponents.js")
+        document.write('<script src="cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.5.2/webcomponents.min.js"><\/script>');
+        }
+        </script>
+        <!-- import html5 custom elements -->
+        <link rel="import" href="{{ url_for('static', filename='bower_components/font-roboto/roboto.html') }}">
+        <link rel="import" href="{{ url_for('static', filename='bower_components/core-toolbar/core-toolbar.html') }}">
+        <link rel="import" href="{{ url_for('static', filename='bower_components/core-menu/core-menu.html') }}">
+        <link rel="import" href="{{ url_for('static', filename='bower_components/core-item/core-item.html') }}">
+        <link rel="import" href="{{ url_for('static', filename='bower_components/core-header-panel/core-header-panel.html') }}">
+        <link rel="import" href="{{ url_for('static', filename='bower_components/core-scroll-header-panel/core-scroll-header-panel.html') }}">
+        <link rel="import" href="{{ url_for('static', filename='bower_components/core-drawer-panel/core-drawer-panel.html') }}">
+        <link rel="import" href="{{ url_for('static', filename='bower_components/core-scaffold/core-scaffold.html') }}">
+        <link rel="import" href="{{ url_for('static', filename='bower_components/core-icons/core-icons.html') }}">
+        <link rel="import" href="{{ url_for('static', filename='bower_components/paper-icon-button/paper-icon-button.html') }}">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+        <![endif]-->
+    {% block styles %}{% endblock styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/materialize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/css/styles.css') }}">
 </head>
-
 <body fullbleed layout vertical unresolved>
-
-<core-drawer-panel id="drawerPanel">
-
-  <core-header-panel drawer mode="waterfall">
+    <core-drawer-panel id="drawerPanel">
+    <core-header-panel drawer mode="waterfall">
     
     <core-toolbar>
-      <span>Menu</span>
+    <span>Menu</span>
     </core-toolbar>
     
     <core-menu>
-      <core-item label="One"></core-item>
-      <core-item label="Two"></core-item>
+    <core-item label="One"></core-item>
+    <core-item label="Two"></core-item>
     </core-menu>
-  
-  </core-header-panel>
-
-  <core-header-panel main mode="waterfall-tall">
+    
+    </core-header-panel>
+    <core-header-panel main mode="waterfall-tall">
     
     <core-toolbar>
-      <paper-icon-button core-drawer-toggle icon="menu"></paper-icon-button>
-      <span flex>Title</span>
+    <paper-icon-button core-drawer-toggle icon="menu"></paper-icon-button>
+    <span flex>Title</span>
     </core-toolbar>
     
     <div class="content">
-      <h1>Crazy Horse</h1>
-      {% block main %}{% endblock main %}
-    </div>
-  
-  </core-header-panel>
+        <h3>Crazy Horse</h3>
+        <div class="row">
+            <div class="col s12 m8">
+                <div class="card-panel teal">
+                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img src="{{ url_for('static', filename='public/images/card.jpg') }}">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
+                <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
 
+        
+    {% block main %}{% endblock main %}
+</div>
+</core-header-panel>
 </core-drawer-panel>
-
-<script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.min.js') }}"</script>
-<script src="{{ url_for('static', filename='bower_components/moment/min/moment.min.js') }}"</script>
-<script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"</script>
-
+<script src="{{ url_for('static', filename='public/js/jquery.js') }}"</script>
+<script src="{{ url_for('static', filename='public/js/materialize.js') }}"</script>
 {% block js %}
 {% endblock js %}
-
 </body>
-
 </html>

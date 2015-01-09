@@ -13,8 +13,3 @@ core-toolbar {
 .content {
   padding: 20px;
 }
-/* drawer is always visible on a wide screen
-   so menu button isn't required */
-core-drawer-panel:not([narrow]) #navicon {
-  display: none;
-}
