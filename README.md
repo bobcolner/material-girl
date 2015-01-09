@@ -4,31 +4,32 @@
 
 #####Social blogging app template with on material-design based UI. HTML and JSON backend provide by Flask and SQLAlchemy.
 
-![alt text](http://material-design.storage.googleapis.com/publish/v_2/material_ext_publish/0Bx4BSt6jniD7QTA5cHFBUlV3RTA/materialdesign_goals_language.png, "Material Design")
+![alt text](http://material-design.storage.googleapis.com/publish/v_2/material_ext_publish/0Bx4BSt6jniD7QTA5cHFBUlV3RTA/materialdesign_goals_language.png "Material Design")
 
 # Bootstrap the app
 
-1. Python
+1. Python [pip install -r]
 	* requierments/common.txt
 	* requierments/dev.txt
 	* requierments/prod.txt
-2. NPM
+2. NPM [npm install -g]
 	* bower
-		* Polymer
-		* Materalizecss
-		* jquery
 	* grunt
 	* coffee-script
-3. SQLAlchemy Database
-	* SQLite (defult)
+3. Bower [bower install --save]
+	* Polymer
+	* Materalizecss
+	* jquery
+4. SQLAlchemy Database
+	* SQLite (default)
 	* PostgreSQL
 	* MySQL
 	* Microsoft SQL Server
 	* Oracle
 	* Amazon Redshift
 
-# Install javascript dependencies
-bower install --save
+# Clone git-repo
+git clone https://github.com/bobcolner/material-girl.git
 
 # Setup Python env
 virtualenv venv
@@ -36,10 +37,7 @@ source venv/bin/activate
 	* deactivate
 
 # Install python dependencies
-
-pip install --upgrade pip
-
-pip install -r requirements/dev.txt
+pip install --upgrade pip && pip install -r requirements/dev.txt
 
 # Prep. DB
 ./manage.py db init
@@ -65,23 +63,29 @@ User.add_self_follows()
 4. export FLASK_CONFIG = DevelopmentConfig
 5. export FLASKY_ADMIN = admin@example.com
 
+# Install javascript dependencies
+
+cd app/static/ && bower install --save && cd ../..
+
 # run server
 #### ./manage.py runserver -h 0.0.0.0
 
 #Apendex:
 ### CSS naming convention
+[bem-syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 
-.u-utilityName {}
+* represents the higher level of an abstraction or component.
+.block-name {}
 
-.ComponentName {}
+* represents a descendent of .block that helps form .block as a whole.
+.block-name__element {}
 
-.ComponentName--modifierName {}
+* represents a different state or version of .block.
+.block-name--modifier {}
+.block-name__element--modifier {}
 
-.ComponentName-descendant {}
-
-.ComponentName-descendant--modifierName {}
-
-.ComponentName.is-stateOfComponent {}
+* utility class
+.u-utility-name {}
 
 ### Docker 
 docker run -p 5000:5000 -it --rm --name="material-girl" -v ~/app:/app -w /app -e "MAIL_USERNAME=..." -e "MAIL_PASSWORD=..." -e "FLASKY_ADMIN=..." python:2 /bin/bash
