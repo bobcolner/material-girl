@@ -28,16 +28,18 @@
 	* Amazon Redshift
 
 # Install javascript dependencies
-1. bower install --save
+bower install --save
 
 # Setup Python env
-1. virtualenv venv
-2. source venv/bin/activate
+virtualenv venv
+source venv/bin/activate
 	* deactivate
 
 # Install python dependencies
-1. pip install --upgrade pip
-2. pip install -r requirements/dev.txt
+
+pip install --upgrade pip
+
+pip install -r requirements/dev.txt
 
 # Prep. DB
 ./manage.py db init
