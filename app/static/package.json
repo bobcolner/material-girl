@@ -1,0 +1,31 @@
+{
+  "name": "material-girl",
+  "version": "0.0.1",
+  "description": "Material Design for Flask",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobcolner/material-girl"
+  },
+  "author": "Bob Colner <bcolner@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bobcolner/material-girl/issues"
+  },
+  "homepage": "https://github.com/bobcolner/material-girl"
+}
