@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Analytics Campaign Insight Metrics Marketing mix optimization roi forecasting data science">
+    <title>QuantClarity | Performance marketing analytics | marketing mix optimization</title>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#303F9F">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Conditionally load WC polyfill -->
+    <script>
+    if ('registerElement' in document && 'createShadowRoot' in HTMLElement.prototype && 'import' in document.createElement('link') && 'content' in document.createElement('template')) {
+        console.log("native WC support")
+    } else {
+        // Load wc.js polyfill
+        console.log("loading webcomponents.js")
+        document.write('<script src="cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.5.2/webcomponents.min.js"><\/script>');
+    }
+    </script>
+    <!-- import html5 custom elements -->
+    <link rel="import" href="{{ url_for('static', filename='bower_components/font-roboto/roboto.html') }}">
+    <link rel="import" href="{{ url_for('static', filename='bower_components/core-toolbar/core-toolbar.html') }}">
+    <link rel="import" href="{{ url_for('static', filename='bower_components/core-menu/core-menu.html') }}">
+    <link rel="import" href="{{ url_for('static', filename='bower_components/core-item/core-item.html') }}">
+    <link rel="import" href="{{ url_for('static', filename='bower_components/core-header-panel/core-header-panel.html') }}">
+    <link rel="import" href="{{ url_for('static', filename='bower_components/core-scroll-header-panel/core-scroll-header-panel.html') }}">
+    <link rel="import" href="{{ url_for('static', filename='bower_components/core-drawer-panel/core-drawer-panel.html') }}">
+    <link rel="import" href="{{ url_for('static', filename='bower_components/core-icons/core-icons.html') }}">
+    <link rel="import" href="{{ url_for('static', filename='bower_components/paper-icon-button/paper-icon-button.html') }}">
+    <link rel="import" href="{{ url_for('static', filename='bower_components/paper-input/paper-input.html') }}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    {% block styles %}{% endblock styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+</head>
+
+<body fullbleed layout vertical unresolved>
+    <core-drawer-panel id="drawerPanel">
+        <core-header-panel drawer mode="scroll">
+
+            <core-toolbar>
+                <span>{% block menu_title %}{% endblock %}</span>
+            </core-toolbar>
+
+            <core-menu class="section">
+                <core-item label="One"></core-item>
+                <div class="divider"></div>
+                <core-item label="Two"></core-item>
+                <div class="divider"></div>
+                <p>Sample</p>
+                <div class="divider"></div>
+                <p>Sample</p>
+                <div class="divider"></div>
+                <p>Sample</p>
+            </core-menu>
+
+        </core-header-panel>
+
+        <core-header-panel main mode="card">
+
+            <core-toolbar>
+                <paper-icon-button core-drawer-toggle icon="menu"></paper-icon-button>
+                <span flex>{% block appbar_title %}{% endblock %}</span>
+            </core-toolbar>
+
+            <div class="section">
+                <p>Sample Content</p>
+                {% block main %}{% endblock main %}
+            </div>
+            <p>Sample</p>
+        </core-header-panel>
+    </core-drawer-panel>
+
+    <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.js') }}"></script>
+    {% block js %} {% endblock js %}
+
+</body>
+
+</html>

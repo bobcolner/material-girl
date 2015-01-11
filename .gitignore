@@ -96,3 +96,5 @@ target/
 # NPM / Bower
 ######################
 bower_components/
+node_modules/
+.sass-cache/

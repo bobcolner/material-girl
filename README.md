@@ -57,11 +57,13 @@ Post.generate_fake(100)
 User.add_self_follows()
 
 # export Env Vars
-1. export SECRET_KEY = 'crazyhourse secert key for secure sessions & forms'
-2. export MAIL_USERNAME = noreply@example.com
-3. export MAIL_PASSWORD = mailpa$$wod
-4. export FLASK_CONFIG = DevelopmentConfig
-5. export FLASKY_ADMIN = admin@example.com
+1. export SECRET_KEY=secert-key-for-secure-sessions-&-forms
+2. export MAIL_USERNAME=noreply@gmail.com
+3. export MAIL_PASSWORD=gmailPa$$word
+4. export FLASK_CONFIG=development
+5. export FLASKY_ADMIN=admin@example.com
+6. export FLASKY_MAIL_SENDER="Flasky <flasky@example.com>"
+7. export FLASKY_MAIL_SUBJECT_PREFIX=[Flasky]
 
 # Install javascript dependencies
 

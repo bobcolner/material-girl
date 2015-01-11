@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Analytics Campaign Insight Metrics Marketing mix optimization roi forecasting data science">
+    <title>QuantClarity | Performance marketing analytics | marketing mix optimization</title>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#303F9F">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    {% block styles %}{% endblock styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+</head>
+
+<body>
+    <ul id="slide-out" class="side-nav fixed">
+        <li><a href="#!">QuantClarity</a></li>
+        <div class="divider"></div>
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>
+                <div class="collapsible-body">
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
+                <div class="collapsible-body">
+                    <a href="#!">Lorem ipsum dolor sit amet.</a>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
+                <div class="collapsible-body">
+                    <a href="#!">Lorem ipsum dolor sit amet.</a>
+                </div>
+            </li>
+        </ul>
+        <div class="divider"></div>
+        <li><a href="#!">First Sidebar Link</a></li>
+        <li><a href="#!">Second Sidebar Link</a></li>
+    </ul>
+    
+    <ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    </ul>
+
+    <div class="container section">
+        {% block main %}{% endblock main %}
+    </div>
+    
+    <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.js') }}"></script>
+    {% block js %} {% endblock js %}
+    <script>
+    // Initialize collapse button
+    $(".button-collapse").sideNav();
+    // Initialize collapsible
+    $('.collapsible').collapsible();
+    </script>
+</body>
+
+</html>
