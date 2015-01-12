@@ -1,0 +1,21 @@
+{% extends "matgirl/materalize_base.html" %} 
+
+{% block body %}
+<div class="left col">
+    {% block sidenav %}{% endblock %}
+</div>
+
+<div class="right col z-depth-1">
+    <div class="header row">
+        View or edit something
+    </div>
+    <div class="body row scroll-y">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="footer row">
+        My footer
+    </div>
+
+</div>
+
+{% endblock %}

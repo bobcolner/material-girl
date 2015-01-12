@@ -7458,9 +7458,6 @@ ul.side-nav.fixed {
 @media (min-height: 40.125em) {
   .picker--time .picker__box {
     margin-bottom: 5em; } }
-body {
-  font-family: "Roboto"; }
-
 core-header-panel {
   background: #e0e0e0; }
 
@@ -7476,5 +7473,22 @@ core-toolbar {
 
 .side-nav {
   background: #e0e0e0; }
+
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  font-family: "Roboto";
+  padding: 0px;
+  margin: 0px; }
+
+.navcol {
+  background: #1976d2;
+  height: 100%; }
+
+.maincol {
+  background: whitesmoke;
+  height: 100%; }
 
 /*# sourceMappingURL=materialize.css.map */

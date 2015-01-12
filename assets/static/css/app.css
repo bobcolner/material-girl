@@ -1,0 +1,141 @@
+/*
+#header {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: #1b5e20;
+    padding-bottom: 70px;
+}
+
+#sidenav {
+    float: left;
+    width: 25%;
+    height: 100%;
+    min-height:100%;
+    overflow: scroll;    
+}
+
+#content {
+    float: right;
+    width: 75%;
+    height: 100%;
+    min-height:100%;
+    overflow: scroll;
+}
+*/
+/*body { margin: 0 }*/
+
+/*.row, .col { 
+    overflow: hidden; 
+    position: absolute; 
+}
+.row { 
+    left: 0;
+    right: 0; 
+}
+.col { 
+    top: 0; 
+    bottom: 0; 
+}
+.scroll-x { 
+    overflow-x: 
+    auto; 
+}
+.scroll-y { 
+    overflow-y: auto; 
+}
+.header.row { 
+    height: 200px; 
+    line-height: 75px;
+    background: #388e3c;
+}
+.body.row { 
+    top: 75px; 
+    bottom: 50px; 
+    padding-top: 75px;
+}
+.footer.row { 
+    height: 50px;
+    line-height: 75px;
+    bottom: 0;   
+}
+.left.col { 
+    width: 250px; 
+    background-color: #bdbdbd;
+}
+.right.col { 
+    left: 250px; 
+    right: 0; 
+*/
+
+/*html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background: #e0e0e0;    
+}
+*/
+
+/*http://alistapart.com/article/conflictingabsolutepositions*/
+html {
+  overflow: hidden;
+}
+body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+#header {
+  background: #388e3c;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0px;    
+  left: 0px;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+}
+header {
+    background: #388e3c;
+    height: 250px;
+    position: fixed;
+    width: 100%
+}
+#side {    
+  background-color: #bdbdbd;  
+  padding: 0;
+  margin: 0;
+  position: absolute;    
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  overflow: auto;    
+  width: 25%;    
+}
+#main {
+  background: #e0e0e0;    
+  padding: 0;
+  margin: 0;
+  position: absolute;    
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow: auto;
+  width: 75%;
+}
+.paper {
+    background: white;
+    height: 350px;
+    max-width: 800px;
+    width: 85%;
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;    
+    position:relative;
+    z-index:200;
+}
+

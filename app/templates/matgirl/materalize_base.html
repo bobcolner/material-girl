@@ -18,56 +18,29 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
-    {% block styles %}{% endblock styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
 </head>
 
 <body>
-    <ul id="slide-out" class="side-nav fixed">
-        <li><a href="#!">QuantClarity</a></li>
-        <div class="divider"></div>
-        <ul class="collapsible">
-            <li>
-                <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>
-                <div class="collapsible-body">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
-                <div class="collapsible-body">
-                    <a href="#!">Lorem ipsum dolor sit amet.</a>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
-                <div class="collapsible-body">
-                    <a href="#!">Lorem ipsum dolor sit amet.</a>
-                </div>
-            </li>
-        </ul>
-        <div class="divider"></div>
-        <li><a href="#!">First Sidebar Link</a></li>
-        <li><a href="#!">Second Sidebar Link</a></li>
-    </ul>
-    
-    <ul>
-    <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    </ul>
 
-    <div class="container section">
-        {% block main %}{% endblock main %}
-    </div>
     
+    <nav id="side">
+        <p>Our side panel</p>
+    </nav>
+
+    <div id="main" class="z-depth-1">
+        
+        <header>#!</header>
+        
+        <p>Our main panel</p>
+        {% block content %}{% endblock %}
+        
+    </div>
+
     <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.js') }}"></script>
-    {% block js %} {% endblock js %}
-    <script>
-    // Initialize collapse button
-    $(".button-collapse").sideNav();
-    // Initialize collapsible
-    $('.collapsible').collapsible();
-    </script>
 </body>
 
 </html>
