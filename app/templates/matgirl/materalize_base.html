@@ -24,20 +24,17 @@
 </head>
 
 <body>
-
-    
-    <nav id="side">
+    <nav>
         <p>Our side panel</p>
     </nav>
 
-    <div id="main" class="z-depth-1">
+    <main class="z-depth-1-half">
         
         <header>#!</header>
         
         <p>Our main panel</p>
         {% block content %}{% endblock %}
-        
-    </div>
+    </main>
 
     <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.js') }}"></script>

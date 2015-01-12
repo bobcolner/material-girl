@@ -28,7 +28,7 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     DEBUG_TB_INTERCEPT_REDIRECTS = False
-    DEBUG_TB_ENABLED = True
+    DEBUG_TB_ENABLED = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
 
