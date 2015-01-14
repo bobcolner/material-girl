@@ -1,24 +1,39 @@
-{% extends "matgirl/materalize_base.html" %}
+{% extends "matgirl/materalize_base.html" %} 
 
 {% block content %}
-
-<div class="row">
-	<form class="col s12 m10 l8">
-		<div class="row">
-			<div class="input-field col s12">
-				<input id="email" type="email" class="validate">
-				<label for="email">Email</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="input-field col s12">
-				<input id="password" type="password" class="validate">
-				<label for="password">Password</label>
-			</div>
-		</div>
-	</form>
-</div>
-
+<article class="article--first z-depth-2 container section">
+    <div class="login">
+        <h3>Login</h3>
+        <div class="divider"></div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" role="form" class="login-form">
+            {{ form.csrf_token }}
+            <div class="input-field">
+                <i class="mdi-communication-email prefix"></i> 
+                {{ form.email.label }} {{ form.email(class="validate") }}
+            </div>
+            <div class="input-field">
+                <i class="mdi-communication-vpn-key prefix"></i>
+                {{ form.password.label }} {{ form.password(class="validate") }}
+            </div>
+            <div class="input-field right">
+                {{ form.remember_me(type="checkbox") }} {{ form.remember_me.label }}
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="mdi-content-send right"></i>
+            </button>
+        </form>
+        <br>
+        <p>Forgot your password? <a href="{{ url_for('auth.password_reset_request') }}">Click here to reset it</a>.</p>
+        <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
+    </div>
+</article>
 {% endblock %}
-
-

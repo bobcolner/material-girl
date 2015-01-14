@@ -1,0 +1,107 @@
+// BEM: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+// BEM macros: https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321
+
+// BEM pattern macros:
+$elementSeparator: '__';
+$modifierSeparator: '--';
+
+@function containsModifier($selector) {
+    $selector: selectorToString($selector);
+    @if str-index($selector, $modifierSeparator) {
+        @return true;
+    } @else {
+        @return false;
+    }
+}
+
+@function selectorToString($selector) {
+    $selector: inspect($selector); //cast to string
+    $selector: str-slice($selector, 2, -2); //remove brackets
+    @return $selector;
+}
+
+@function getBlock($selector) {
+    $selector: selectorToString($selector);
+    $modifierStart: str-index($selector, $modifierSeparator) - 1;
+    @return str-slice($selector, 0, $modifierStart);
+}
+
+@mixin b($block) {
+    .#{$block} {
+        @content;
+    }
+}
+
+@mixin e($element) {
+    $selector: &;
+    @if containsModifier($selector) {
+        $block: getBlock($selector);
+        @at-root {
+            #{$selector} {
+                #{$block+$elementSeparator+$element} {
+                    @content;
+                }
+            }
+        }
+    } @else {
+        @at-root {
+            #{$selector+$elementSeparator+$element} {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin m($modifier) {
+    @at-root {
+        #{&}#{$modifierSeparator+$modifier} {
+            @content;
+        }
+    }
+}
+
+@include b(test) {
+   background: red;
+   @include m(modifier) {
+       color: blue;
+       @include e(subelement) { 
+           background: gray;
+       }
+   }
+}
+
+.test {
+    background: red;
+}
+.test--modifier {
+    color: blue;
+}
+.test--modifier .test__subelement {
+    background: gray;
+}
+
+// #### Modules ####
+
+// m-nav
+// m-nav--header
+// m-nav--menu
+// m-nav--item
+
+// m-main
+// m-main--header
+// m-main--body
+
+// m-paper
+// m-paper--toolbar
+// m-paper--tabs
+
+// m-auth
+// m-auth--header
+// m-auth--body
+// m-auth--form
+
+// m-post
+
+// m-comments
+
+// m-user-profile

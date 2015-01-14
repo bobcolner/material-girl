@@ -24,20 +24,25 @@
 </head>
 
 <body>
+    {% block body %}
     <nav>
-        <p>Our side panel</p>
+        <header class="nav-header">
+            <h4>QuantClairty</h4>
+            <a href="#!"><i class="mdi-action-account-circle"></i>Accout</a>
+        </header>
+        {% block sidenav %}{% endblock %}
     </nav>
 
-    <main class="z-depth-1-half">
+    <main class="z-depth-1">
+
+        <header class="main-header">{% block appbar %}{% endblock %}</header>
         
-        <header>#!</header>
-        
-        <p>Our main panel</p>
         {% block content %}{% endblock %}
     </main>
-
+    {% endblock body %}
     <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.js') }}"></script>
+
 </body>
 
 </html>
