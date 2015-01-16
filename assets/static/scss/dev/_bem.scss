@@ -1,3 +1,18 @@
+// #### SASS Style guide: ####
+// * Avoid over-nesting (result in over-specific selectors. 
+//      -Highly coupled to html structure
+// * Avoid style inheratience i.e. @extends.
+//      - results in numerous style small style classs to style each html element.
+// * using placeholders can help
+//      - Use extend from within a module, not across different modules.
+//      - Use extend on placeholders exclusively, not on actual selectors.
+
+// #### Files: ####
+// Base: materalizecss
+// Layout: 
+// Modules: 
+// Theme: 
+
 // BEM: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
 // BEM macros: https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321
 
@@ -26,13 +41,13 @@ $modifierSeparator: '--';
     @return str-slice($selector, 0, $modifierStart);
 }
 
-@mixin b($block) {
+@mixin base($block) {
     .#{$block} {
         @content;
     }
 }
 
-@mixin e($element) {
+@mixin element($element) {
     $selector: &;
     @if containsModifier($selector) {
         $block: getBlock($selector);
@@ -52,56 +67,30 @@ $modifierSeparator: '--';
     }
 }
 
-@mixin m($modifier) {
+@mixin modifier($modifier) {
     @at-root {
         #{&}#{$modifierSeparator+$modifier} {
             @content;
         }
     }
 }
-
-@include b(test) {
-   background: red;
-   @include m(modifier) {
-       color: blue;
-       @include e(subelement) { 
-           background: gray;
-       }
-   }
+// TEst
+@include base(building) {
+    background-color: #6BD9ED;
+    padding: 15px;
+    height: 500px;
+    @include modifier(brick) {        
+        background-color: red;        
+    }
+    @include element(roof) {
+        background-color: grey;
+        font-size: 34px;
+        position: relative;
+        top: 10px;
+        @include modifier(shingles) {
+            &:before {
+                content: "\e600";
+            }
+        }
+    }
 }
-
-.test {
-    background: red;
-}
-.test--modifier {
-    color: blue;
-}
-.test--modifier .test__subelement {
-    background: gray;
-}
-
-// #### Modules ####
-
-// m-nav
-// m-nav--header
-// m-nav--menu
-// m-nav--item
-
-// m-main
-// m-main--header
-// m-main--body
-
-// m-paper
-// m-paper--toolbar
-// m-paper--tabs
-
-// m-auth
-// m-auth--header
-// m-auth--body
-// m-auth--form
-
-// m-post
-
-// m-comments
-
-// m-user-profile

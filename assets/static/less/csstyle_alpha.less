@@ -1,0 +1,66 @@
+
+.component(@name, @content) {
+  .@{name} {
+    @content();
+  }
+}
+
+.option(@name, @content) {
+  &.\--@{name} {
+    @content();
+  }
+}
+
+.part(@name, @content){
+  &__@{name} {
+    @content();
+  }
+}
+
+.location(@name, @content) {
+  #csstyle .\@@{name} {
+    @content();
+  }
+}
+
+.tweak(@name, @content) {
+  #csstyle .\+@{name}{
+    @content();
+  }
+}
+
+.component(button, {
+  background: #6BD9ED;
+  padding: 15px;
+  
+  .option(action, {
+    color: #1F1F1F;
+    background: #A7E040;
+  });
+  
+  .part(icon, {
+    font-size: 34px;
+    position: relative;
+    top: 5px;
+    font-family: 'icomoon';
+    .option(close, {
+      &:before {
+        content: '\00d7';
+      }
+    })
+  });
+});
+
+.location(home, {
+  .component(button, {
+    background: #DDD;
+  });
+});
+
+.tweak(rounded, {
+  border-radius: 10px;
+});
+
+#csstyle {
+  padding: 20px;
+}

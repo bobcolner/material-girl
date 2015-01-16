@@ -18,30 +18,31 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}"> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/master.css') }}">
 </head>
 
-<body>
+<body id="csstyle">
     {% block body %}
-    <nav>
-        <header class="nav-header">
-            <h4>QuantClairty</h4>
-            <a href="#!"><i class="mdi-action-account-circle"></i>Accout</a>
-        </header>
-        {% block sidenav %}{% endblock %}
+    <nav class="sidenav">
+        <header class="sidenav__header"></header>
+        <!-- {% block sidenav %}{% endblock %} -->
     </nav>
 
-    <main class="z-depth-1">
-
-        <header class="main-header">{% block appbar %}{% endblock %}</header>
-        
-        {% block content %}{% endblock %}
+    <main class="main">
+        <header class="main__header"></header>
+        <!-- {% block content %}{% endblock %} -->
     </main>
     {% endblock body %}
     <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.js') }}"></script>
+    
+    <script type="text/javascript">
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 
 </body>
 

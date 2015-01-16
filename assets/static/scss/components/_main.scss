@@ -1,0 +1,99 @@
+/*http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/*/
+/*http://alistapart.com/article/conflictingabsolutepositions*/
+/*http://alistapart.com/article/conflictingabsolutepositions*/
+/*http://jsfiddle.net/WsXP6/68/*/
+
+html, body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// CSStyle components
+
+$header_height: 33%;
+$main_width: 78%;
+$nav_width: 100% - $main_width;
+
+@include component(main) {
+	background-color: color('blue','darken-2');
+	overflow: auto;
+    position: absolute;    
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: $main_width;
+	@include part(header) {
+		background-color: color('green','darken-2');
+    	position: fixed; 		
+ 		height: $header_height;
+ 		width: $main_width;
+	}	
+
+}
+
+@include component(sidenav) {
+	background-color: color('brown','darken-1');
+	overflow: auto;
+    position: absolute;    
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    padding: 0;    
+    height: 100%; 
+    width: $nav_width;
+	@include part(header) {
+		background-color: color('brown','darken-3');
+    	height: $header_height;    	
+    	width: 100%;
+	}	
+}
+
+@include component(sidealt) {
+	
+	@include part(header) {
+
+	}
+}
+
+@include component(paper) {
+    background-color: white;	
+    border-radius: 3px;
+    position:relative;   
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;    
+    @include option(first) {
+    	margin-top: 10%;	
+    }
+}
+
+// @include component(newpost) {
+//     position: fixed;
+//     right: 3%;
+//     top: 33%;
+//     z-index: 4;
+//     @include part(button) {
+//     	position: relative;
+//     	bottom: 26px;
+// 	}
+// }
+
+// @include component(auth)  {
+//     max-width: 500px;
+//     margin-top: 50px;
+//     margin-bottom: 20px;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+
+// body { @include debug-vertical-alignment(); }
+
+// @include respond('medium-and-up') {
+  
+// }
+

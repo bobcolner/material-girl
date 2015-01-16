@@ -1,0 +1,39 @@
+
+// http://type-scale.com/
+
+// Typesetting -Responsive, Modular-scale Typeography.
+// Modular Scale factor constants.
+$Modular_Scales: (
+	'MINOR_SECOND'    : 1.067,
+	'MAJOR_SECOND'    : 1.125,
+	'MINOR_THIRD'     : 1.2,
+	'MAJOR_THIRD'     : 1.25,
+	'PERFECT_FOURTH'  : 1.333,
+	'AUGMENTED_FOURTH': 1.414,
+	'PERFECT_FIFTH'   : 1.5,
+	'MINOR_SIXTH'     : 1.6,
+	'GOLDEN_SECTION'  : 1.618,
+	'MAJOR_SIXTH'     : 1.667,
+	'MINOR_SEVENTH'   : 1.778,
+	'MAJOR_SEVENTH'   : 1.875,
+	'OCTAVE'          : 2,
+	'MAJOR_TENTH'     : 2.5,
+	'MAJOR_ELEVENTH'  : 2.667,
+	'MAJOR_TWELFTH'   : 3,
+	'DOUBLE_OCTAVE'   : 4
+);
+
+// Other typesetting variables:
+$font-sans: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-serif: Georgia, 'Times New Roman', serif;
+$font-mono: 'Lucida Console', Monaco, monospace;
+$text-color: color('grey','darken-4');
+$base-vertical-unit: 6px;
+$base-line-multi: 4;
+$base-font-size: 16px;
+$ms-ratio: map-get($Modular_Scales, 'GOLDEN_SECTION');
+$paragraph-indent: true;
+$paragraph-justify: true;
+$load-typesetted: true;
+
+// To use on the body tag for example: body { @include debug-vertical-alignment(); } and add class va-debug to the body tag

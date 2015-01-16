@@ -1,0 +1,24 @@
+H1 Style Notes
+
+(http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/)
+(http://alistapart.com/article/conflictingabsolutepositions)
+(http://alistapart.com/article/conflictingabsolutepositions)
+(http://jsfiddle.net/WsXP6/68/)
+
+
+// #### SASS Style guide: ####
+// * Avoid over-nesting (result in over-specific selectors. 
+//      -Highly coupled to html structure
+// * Avoid style inheratience i.e. @extends.
+//      - results in numerous style small style classs to style each html element.
+// * using placeholders can help
+//      - Use extend from within a module, not across different modules.
+//      - Use extend on placeholders exclusively, not on actual selectors.
+
+// #### Files: ####
+// BEM: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+// BEM macros: https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321
+
+
+sass --watch ~/Documents/material-girl/assets/static/scss/master.scss:master.css
+

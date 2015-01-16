@@ -1,0 +1,8 @@
+
+@include component(paper) {
+   margin-bottom: emRhythm(3, $ms-down1); // [1]
+   border-color: #000;
+   border-style: solid;
+   @include rhythmBorderBottom(2px, 3, $ms-down1); // [2]
+   @include setType(3, $ms-down1); // [3]
+}

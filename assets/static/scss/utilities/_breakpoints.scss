@@ -1,0 +1,55 @@
+// http://www.sitepoint.com/managing-responsive-breakpoints-sass/
+
+// Foundation breakpoints:
+// $small-range:   (0em, 40em);       /* 0, 640px */
+// $medium-range:  (40.063em, 64em);  /* 641px, 1024px */
+// $large-range:   (64.063em, 90em);  /* 1025px, 1440px */
+// $xlarge-range:  (90.063em, 120em); /* 1441px, 1920px */
+// $xxlarge-range: (120.063em);       /* 1921px */
+
+//  Screen sizes
+$xlarge-screen: 1440px !default;
+$large-screen-up: 1201px !default;
+$large-screen: 1200px !default;
+$medium-screen-up: 993px !default;
+$medium-screen: 992px !default;
+$small-screen-up: 601px !default;
+$small-screen: 600px !default;
+
+//  Media queries
+$xlarge-and-up: "only screen and (min-width : #{$large-screen-up})";
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})";
+$large-only: "only screen and (min-width : #{$medium-screen-up}) and (max-width : #{$large-screen})";
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})";
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})";
+$medium-and-down: "only screen and (max-width : #{$medium-screen})";
+$small-and-down: "only screen and (max-width : #{$small-screen})";
+
+// Media Query Map
+$breakpoints: (
+    'xlarge-and-up'   : $xlarge-and-up,
+    'large-and-up'    : $large-and-up,
+    'large-only'      : $large-only,
+    'medium-and-up'   : $medium-and-up,
+    'medium-only'     : $medium-only,
+    'medium-and-down' : $medium-and-down,
+    'small-and-down'  : $small-and-down
+);
+
+// media query 'respond' mixin
+@mixin respond($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{map-get($breakpoints, $name)} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    // Just warn the user
+    @warn "Unfortunately, no value could be retrieved from `#{$name}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
