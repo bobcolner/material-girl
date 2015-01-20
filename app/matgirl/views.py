@@ -3,14 +3,13 @@ from flask.ext.login import login_user, logout_user, login_required, current_use
 from . import matgirl
 from .. import db
 from ..models import User
-from .forms import WelcomeForm, LoginForm, RegistrationForm
+from .forms import LoginForm, RegistrationForm
 
 @matgirl.route('/')
-@matgirl.route('/home')
-@matgirl.route('/welcome')
-def welcome():
-    form = WelcomeForm()
-    return render_template('matgirl/welcome.html', form=form)
+@matgirl.route('/index')
+@matgirl.route('/base')
+def base():
+    return render_template('matgirl/base.html')
 
 @matgirl.route('/login', methods=['GET', 'POST'])
 def login():
@@ -28,10 +27,6 @@ def register():
     form = RegistrationForm()
     return render_template('matgirl/register.html', form=form)
 
-@matgirl.route('/layout')
-def layout():
-	return render_template('matgirl/layout.html')
-
 @matgirl.route('/cards')
 def cards():
     return render_template('matgirl/cards.html')
@@ -42,3 +37,4 @@ def add_numbers():
     a = request.args.get('a', 0, type=int)
     b = request.args.get('b', 0, type=int)
     return jsonify(result=a + b)
+

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Analytics Campaign Insight Metrics Marketing mix optimization roi forecasting data science">
+    <title>QuantClarity | Performance marketing analytics | marketing mix optimization</title>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#303F9F">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <script src="{{ url_for('static', filename='bower_components/hammerjs/hammerjs.min.js') }}"></script>
+    <![endif]-->
+    <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>    
+    <script src="{{ url_for('static', filename='js/jQuery.mmenu-master/src/js/jquery.mmenu.min.all.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/jQuery.mmenu-master/src/css/jquery.mmenu.all.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/jQuery.mmenu-master/src/css/extensions/jquery.mmenu.iconbar.css') }}">
+    <link rel="stylesheet" href="js/jQuery.mmenu-master/src/css/extensions/jquery.mmenu.widescreen.css"/>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/master.css') }}">
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#my-menu").mmenu({
+            classes: "mm-dark",
+            slidingSubmenus: true,
+            counters: true,
+            header: true,
+            footer: { add: true, content: "QuantClarity LLC © 2015" },
+            offCanvas: { position  : "left", zposition : "next" }
+        });
+    });
+    </script>
+</head>
+
+<body id="csstyle">
+    {% block app %}
+    <nav id="my-menu" class="sidenav">
+        <ul>
+          <li><a href="/"><i class="icon"></i>Home</a></li>
+          <li>
+             <span href="/about/">About us</span>
+             <ul>
+                <li><a href="/about/history/">History</a></li>
+                <li><a href="/about/team/">The team</a></li>
+                <li><a href="/about/address/">Our address</a></li>
+             </ul>
+          </li>
+          <!-- <li class="Spacer"><a href="/">Home</a></li> -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+    <main class="main">
+        <header class="main__header">
+            {% block header %}<a href="#my-menu">Open the menu</a>{% endblock %}
+        </header>
+        {% block content %}{% endblock %}
+    </main>
+    {% endblock app %}   
+</body>
+
+</html>

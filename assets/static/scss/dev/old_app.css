@@ -10,7 +10,7 @@ html, body {
     height: 100%;
     background-color: #e0e0e0;
 }
-nav {    
+.sidenav {    
     background-color: #bdbdbd;  
     position: absolute;    
     top: 0px;
@@ -23,19 +23,19 @@ nav {
     min-width: 250px;
     height: 100%; 
 }
-header {
-    height: 33%;
-}
+
 .nav-header {
     background-color: #1b5e20; 
     padding: 10px;
+    height: 33%;
 }
 .main-header {
     background-color: #388e3c; 
     position: fixed;
     width: 78%
+    height: 33%;
 }
-main {
+.main {
     padding: 0;
     margin: 0;
     position: absolute;    
@@ -45,7 +45,7 @@ main {
     overflow: auto;
     width: 78%;    
 }
-article {
+.paper {
     background-color: white;
     min-height: 300px;
     /*width: 85%;*/

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Analytics Campaign Insight Metrics Marketing mix optimization roi forecasting data science">
+    <title>QuantClarity | Performance marketing analytics | marketing mix optimization</title>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#303F9F">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/master.css') }}">
+</head>
+
+<body id="csstyle">
+    {% block app %}
+    <div class="sidenav">
+        <header class="sidenav__header"></header>
+    </div>
+    
+    <main class="main">
+        <header class="main__header">
+            <h5>QuantClarity / {% block header %}{% endblock %}</h5>
+        </header>
+        {% block content %}{% endblock %}
+    </main>
+    {% endblock app %}   
+
+    <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>    
+    <script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.js') }}"></script>
+
+</body>
+
+</html>
