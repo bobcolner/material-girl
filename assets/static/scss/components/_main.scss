@@ -1,57 +1,30 @@
-@mixin box-shadow-2($args1, $args2) {
-    -webkit-box-shadow: $args1, $args2;
-    -moz-box-shadow: $args1, $args2;
-    box-shadow: $args1, $args2;
-}
-
-%z-depth-1{
-    @include box-shadow-2(0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12));
-}
-%z-depth-1-half{
-    @include box-shadow-2(0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15));
-}
-%z-depth-2{
-    @include box-shadow-2(0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19));
-}
-%z-depth-3{
-    @include box-shadow-2(0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19));
-}
-%z-depth-4{
-    @include box-shadow-2(0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21));
-}
-%z-depth-5{
-    @include box-shadow-2(0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22));
-}
-
-html {
- box-sizing: border-box;
-}
-*, *:before, *:after {
- box-sizing: inherit;
-}
-html, body {    
-    overflow: hidden;
+html, body {
+    z-index: 0;
     padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
 }
 
-$header_height: 8em;
+$header_height: 10 rem;
 
 @include component(main) {
     background-color: color('green','lighten-1');
-    @extend %z-depth-1;
+    @extend %z-depth-1-half;
+    z-index: 2;
     position: absolute;    
     overflow: auto;
     padding: 0;
     margin: 0;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100%;     
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    @include respond('medium-only') {
+        width: 70%;
+    }
     @include respond('large-and-up') {
-        width: 78%;
+        width: 75%;
     }
     @include part(header) {
         background-color: color('green','darken-2');
@@ -69,8 +42,11 @@ $header_height: 8em;
     padding: 0;
     margin: 0;
     width: 0;
+    @include respond('medium-only') {
+        width: 30%;
+    }
     @include respond('large-and-up') {
-        width: 22%;
+        width: 25%;
     }
     @include part(header) {
         background-color: color('blue','darken-2');
@@ -81,24 +57,34 @@ $header_height: 8em;
 
 @include component(paper) {
     background-color: color('grey','lighten-3');
-    @extend %z-depth-1;
+    @extend %z-depth-1-half;
+    z-index: 2;
     border-radius: 3px;
+    padding: 3em;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2em;
-    height: 15em;
-    width: 100%;
+    width: 96%;
     @include respond('medium-only') {
-        width: 90%;
+        width: 92%;
     }
     @include respond('large-and-up') {
-        width: 80%;
+        width: 85%;
         max-width: 60em;
         max-width: 45em;
     }
     @include option(first) {
-        margin-top: 10em;
- }
+        margin-top: 4em;
+    }
+    @include option(filler-short) {
+        height: 60px;
+    }
+    @include option(filler-med) {
+        height: 120px;
+    }
+    @include option(filler-long) {
+        height: 300px;
+    }
 }
 
 @include component(newpost) {
@@ -109,15 +95,27 @@ $header_height: 8em;
     @include part(button) {
         position: relative;
         bottom: 26px;
-        @include respond('large-and-up') {
+        @include respond('medium-and-up') {
             display: none;
         }
     }
 }
 
-
-// body { @include debug-vertical-alignment(); }
-
-// @include respond('medium-and-up') {
-  
+// @include component(ptxt) {
+//     @include body-content-scale($page-id: 'csstyle', $line-height: 1.25)
+// }
+// @include component(h4txt) {
+//     @include h4-scale()
+// }
+// @include component(h3txt) {
+//     @include h3-scale($line-height: 1.25)
+// }
+// @include component(h2txt) {
+//     @include h2-scale($line-height: 1.25)
+// }
+// @include component(h1txt) {
+//     @include h1-scale($line-height: 1.25)
+// }
+// @include component(blockquotetxt) {
+//     @include blockquote-scale($line-height: 1.25)
 // }

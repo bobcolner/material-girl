@@ -18,7 +18,8 @@ $body-font-size: 1em !default;
     font-size: $body-font-size; // 16px
     line-height: $line-height;
 
-    @media (min-width: 43.75em) {
+    // @media (min-width: 43.75em) {
+    @include respond('medium-and-up') {
       font-size: $body-font-size; // 16px
       line-height: $line-height * 1.1; // 1.375
     }
@@ -31,12 +32,12 @@ $body-font-size: 1em !default;
     font-size: $body-font-size * 2; // 2x body copy size = 32px
     line-height: $line-height;
 
-    @media (min-width: 43.75em) {
+    @include respond('medium-and-up') {
       font-size: $body-font-size * 2.5; // 2.5x body copy size = 40px
       line-height: $line-height * .9; // 1.125
     }
 
-    @media (min-width: 56.25em) {
+    @include respond('large-and-up') {
       font-size: $body-font-size * 3; // 3x body copy size = 48px
       line-height: $line-height * .85; // 1.0625
     }
@@ -49,12 +50,12 @@ $body-font-size: 1em !default;
     font-size: $font-size;
     line-height: $line-height * .92; // 1.15
 
-    @media (min-width: 43.75em) {
+    @include respond('medium-and-up') {
       font-size: $body-font-size * 2; // 2 body copy size = 32px
       line-height: $line-height;
     }
 
-    @media (min-width: 56.25em) {
+    @include respond('large-and-up') {
       font-size: $body-font-size * 2.25; // 2.25x body copy size = 48px
       line-height: $line-height;
     }
@@ -67,12 +68,12 @@ $body-font-size: 1em !default;
     font-size: $body-font-size * 1.375; // 1.375x body copy size = 22px
     line-height: $line-height * .909; // 1.13625
 
-    @media (min-width: 43.75em) {
+    @include respond('medium-and-up') {
       font-size: $body-font-size * 1.5; // 1.5x body copy size = 24px
       line-height: $line-height;
     }
 
-    @media (min-width: 56.25em) {
+    @include respond('large-and-up') {
       font-size: $body-font-size * 1.75; // 1.75x body copy size = 28px
       line-height: $line-height;
     }
@@ -85,7 +86,7 @@ $body-font-size: 1em !default;
     font-size: $body-font-size * 1.125; // 1.1255x body copy size = 18px
     line-height: $line-height;
 
-    @media (min-width: 43.75em) {
+    @include respond('medium-and-up') {
       line-height: $line-height * 1.1; // 1.221
     }
   }
@@ -97,7 +98,7 @@ $body-font-size: 1em !default;
     font-size: $font-size;
     line-height: $line-height * 1.2; // 1.5
 
-    @media (min-width: 43.75em) {
+    @include respond('medium-and-up') {
       font-size: $font-size;
       line-height: $line-height * 1.166; // 1.4575
     }

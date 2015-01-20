@@ -38,3 +38,6 @@ def add_numbers():
     b = request.args.get('b', 0, type=int)
     return jsonify(result=a + b)
 
+@matgirl.route('/typeset')
+def typeset():
+    return render_template('matgirl/sassline.html')

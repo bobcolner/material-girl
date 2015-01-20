@@ -1,78 +1,24 @@
-                                                                                    
+                                                       	
 @charset "UTF-8"; 
  
+// Materialize
+@import "../bower_components/materialize/sass/materialize"; 
+
 // CSStyle macros
 @import "../bower_components/csstyle/csstyle";
+
 // Boubon Lib
-@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
-// Media Queries
-@import "utilities/breakpoints";
-// Colors
-@import "utilities/color";
-
-// CSS style generating partials:
-// CSS Reset
-@import "../bower_components/inuit-normalize/generic.normalize";
-
-// Main Components
-@import "components/main";
-
-
-// Materialize mixins  
-// @import "../bower_components/materialize/sass/components/prefixer" ;
-// @import "../bower_components/materialize/sass/components/mixins";
-// Variables
-// @import "../bower_components/materialize/sass/components/variables";
-// @import "or_variables";
-
+// @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";  
 
 // SCUT Lib
 // @import "../bower_components/scut/dist/scut";
-
-// @import "components/pure-drawer/";
-
-// Materalize global style
-// @import "../bower_components/materialize/sass/components/global";               
-
-// Typography
-// @import "../bower_components/materialize/sass/components/roboto";
-// @import "../bower_components/materialize/sass/components/icons-material-design";
-// @import "utilities/typography"; 
-// @import "../bower_components/typesettings/typesettings";
-
-// @import "components/paper";
-// @import "components/auth";
-// @import "components/post";
-// @import "components/sidenav";
-// @import "components/userprofile";
-// @import "components/comment";
  
-// Reusable Tweaks
-// @import "tweaks/";
+// Over-rides
+@import "utilities/or_variables";
 
+// @import "utilities/mod_scale";
+ 
+// Main Components
+@import "components/main";
 
-// @import "../bower_components/materialize/sass/components/color";
-// // Components
-// @import "../bower_components/materialize/sass/components/typography";
-// @import "../bower_components/materialize/sass/components/form";
-// @import "../bower_components/materialize/sass/components/buttons";
-// @import "../bower_components/materialize/sass/components/waves";
-
-// @import "../bower_components/materialize/sass/components/grid";
-// @import "../bower_components/materialize/sass/components/cards";
-// @import "../bower_components/materialize/sass/components/toast";
-// @import "../bower_components/materialize/sass/components/tabs";
-// @import "../bower_components/materialize/sass/components/tooltip";
-// @import "../bower_components/materialize/sass/components/dropdown";
-// @import "../bower_components/materialize/sass/components/modal";
-// @import "../bower_components/materialize/sass/components/collapsible";
-// @import "../bower_components/materialize/sass/components/materialbox";
-// @import "../bower_components/materialize/sass/components/navbar";
-// @import "../bower_components/materialize/sass/components/table_of_contents";
-// @import "../bower_components/materialize/sass/components/sideNav";
-// @import "../bower_components/materialize/sass/components/preloader";
-// @import "../bower_components/materialize/sass/components/slider";
-// @import "../_components/materialize/sass/components/date_picker/default.scss";
-// @import "../bower_components/materialize/sass/components/date_picker/default.date.scss";
-// @import "../bower_components/materialize/sass/components/date_picker/default.time.scss";
-
+@import "utilities/sassline/style";

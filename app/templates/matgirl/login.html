@@ -1,7 +1,7 @@
 {% extends "matgirl/base.html" %} 
 
-{% block app %}
-<article class="article--first z-depth-2 container section">
+{% block content %}
+<article class="paper --first container section">
     <div class="login">
         <h3>Login</h3>
         <div class="divider"></div>
@@ -16,16 +16,18 @@
         {% endwith %}
         <form method="POST" role="form" class="login-form">
             {{ form.csrf_token }}
-            <div class="input-field">
-                <i class="mdi-communication-email prefix"></i> 
-                {{ form.email.label }} {{ form.email(class="validate") }}
-            </div>
-            <div class="input-field">
-                <i class="mdi-communication-vpn-key prefix"></i>
-                {{ form.password.label }} {{ form.password(class="validate") }}
-            </div>
-            <div class="input-field right">
-                {{ form.remember_me(type="checkbox") }} {{ form.remember_me.label }}
+            <div class="formwrapper section">
+                <div class="input-field">
+                    <i class="mdi-communication-email prefix"></i> 
+                    {{ form.email.label }} {{ form.email(class="validate") }}
+                </div>
+                <div class="input-field">
+                    <i class="mdi-communication-vpn-key prefix"></i>
+                    {{ form.password.label }} {{ form.password(class="validate") }}
+                </div>
+                <div class="input-field right">
+                    {{ form.remember_me(type="checkbox") }} {{ form.remember_me.label }}
+                </div>
             </div>
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="mdi-content-send right"></i>

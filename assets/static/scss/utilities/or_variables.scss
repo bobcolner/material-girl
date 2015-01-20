@@ -1,0 +1,157 @@
+// use placeholder vs. classes for @extendes
+%z-depth-1{
+    @include box-shadow-2(0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12));
+}
+%z-depth-1-half{
+    @include box-shadow-2(0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15));
+}
+%z-depth-2{
+    @include box-shadow-2(0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19));
+}
+%z-depth-3{
+    @include box-shadow-2(0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19));
+}
+%z-depth-4{
+    @include box-shadow-2(0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21));
+}
+%z-depth-5{
+    @include box-shadow-2(0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22));
+}
+
+// /*** Buttons ***/
+// $button-background-disabled: #DFDFDF;
+// $button-color: color("blue", "base") !default;
+// $button-color-disabled: #9F9F9F;
+// $button-color-flat: #343434;
+// $button-color-raised: #FFF;
+// $button-floating-size: 37px !default;
+// $button-height: 36px !default;
+// $button-font-size-shared: 1.3rem;
+// $button-line-height: 36px;
+
+
+// /*** Cards ***/
+// $default-color: #00bcd4 !default;
+// $card-padding: 20px !default;
+// $footer-font-color: #000 !default;
+// $card-bg-color: #fff !default;
+
+// /*** Collapsible ***/
+// $collapsible-height: 3rem !default;
+// $collapsible-header-color: #fff !default;
+// $collapsible-border-color: #ddd !default;
+
+// /*** Forms ***/
+// // Text Inputs + Textarea
+// $border-color: color("grey", "base") !default;
+// $highlight-color: color("light-blue", "base") !default;
+// $label-font-size: .8rem !default;
+
+// // Radio Buttons
+// $disabled-color: rgba(0,0,0, .26) !default;
+// $fill-color: #0f9d58 !default;
+// $radio-border: #5a5a5a !default;
+
+
+
+// /*** Global ***/
+
+// // Media Query Ranges
+//  Screen sizes
+$xlarge-screen: 1440px;
+$large-screen-up: 1201px;
+$large-screen: 1200px;
+$medium-screen-up: 993px;
+$medium-screen: 992px;
+$small-screen-up: 601px;
+$small-screen: 600px;
+
+//  Media queries
+$xlarge-and-up: "only screen and (min-width : #{$large-screen-up})";
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})";
+$large-only: "only screen and (min-width : #{$medium-screen-up}) and (max-width : #{$large-screen})";
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})";
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})";
+$medium-and-down: "only screen and (max-width : #{$medium-screen})";
+$small-and-down: "only screen and (max-width : #{$small-screen})";
+
+// Media Query Map
+$breakpoints: (
+    'xlarge-and-up'   : $xlarge-and-up,
+    'large-and-up'    : $large-and-up,
+    'large-only'      : $large-only,
+    'medium-and-up'   : $medium-and-up,
+    'medium-only'     : $medium-only,
+    'medium-and-down' : $medium-and-down,
+    'small-and-down'  : $small-and-down
+);
+
+// media query 'respond' mixin
+@mixin respond($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{map-get($breakpoints, $name)} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    // Just warn the user
+    @warn "Unfortunately, no value could be retrieved from `#{$name}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+
+
+// // Grid Variables
+// $num-cols: 12 !default;
+// $gutter-width: 1.5rem !default;
+
+// $element-top-margin: $gutter-width/3 !default;
+// $element-bottom-margin: ($gutter-width*2)/3 !default;
+
+
+// /*** Navbar ***/
+// $navbar-height: 64px;
+// $navbar-height-mobile: 56px;
+
+
+// /*** SideNav ***/
+
+
+
+// /*** Tables ***/
+// $table-border-color: #d0d0d0;
+// $table-striped-color: #f2f2f2;
+
+// /*** Toasts ***/
+// $toast-height: 48px !default;
+// $toast-color: #323232 !default;
+// $toast-text-color: #fff !default;
+
+// /*** Typography ***/
+// $off-black: rgba(0, 0, 0, 0.87) !default;
+// // Header Styles
+// $h1-fontsize: 4.2rem !default;
+// $h2-fontsize: 3.56rem !default;
+// $h3-fontsize: 2.92rem !default;
+// $h4-fontsize: 2.28rem !default;
+// $h5-fontsize: 1.64rem !default;
+// $h6-fontsize: 1rem !default;
+
+// // Flowtext
+// $range : $large-screen - $small-screen !default;
+// $intervals: 20 !default;
+// $interval-size: $range / $intervals !default;
+
+// /*** Collections ***/
+// $collection-border-color: #e0e0e0 !default;
+// $collection-bg-color: #fff !default;
+// $collection-active-bg-color: color("blue", "lighten-1") !default;
+// $collection-active-color: color("blue", "lighten-4") !default;
+// $collection-hover-bg-color: rgba(0,0,0,.08) !default;
+
+// /* Progress Bar */
+// $progress-bar-color: color("light-blue", "base");
