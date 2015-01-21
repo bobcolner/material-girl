@@ -18,6 +18,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
+    <!-- Railway - Sans -->
+    <!-- <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Raleway:300,300i,400,400i,500,500,600,600,700,900,900"> -->
+    <!--  - Serif -->
+    <!-- <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/:400,400i,500,500i,700,700i"> -->
+    <!-- Latin Modern - Mono -->
+    <!-- <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Latin+Modern+Mono:300,400,700"> -->
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.css') }}"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/master.css') }}">
 </head>
@@ -25,12 +31,15 @@
 <body id="csstyle">
     {% block app %}
     <div class="sidenav"> 
-        <div class="sidenav__header">Side Header</div>
+        <div class="sidenav__header">
+            <h2>Side Header</h2>
+        </div>
     </div>
 
     <div class="main">
         <div class="main__header">{% block header %}QuantClarity / {% endblock %}</div>
         {% block content %}{% endblock %}
+        <div class="main__footer">QuantClarity @ 2015</div>
     </div>
 
     {% endblock app %}

@@ -58,6 +58,22 @@
 
 // // Media Query Ranges
 //  Screen sizes
+// $xlarge-screen: 1440px;
+// $large-screen-up: 1201px;
+// $large-screen: 1200px;
+// $medium-screen-up: 993px;
+// $medium-screen: 992px;
+// $small-screen-up: 601px;
+// $small-screen: 600px;
+
+$breakpoints: (
+  break-0: 0,     // 0px       Mobile first
+  break-1: 640,   // 640px   ~ Small tablet up
+  break-2: 800,   // 800px   ~ Large tablet up
+  break-3: 1024,  // 1024px  ~ Desktop up
+  break-4: 1600   // 1600px  ~ Large desktop up
+);
+
 $xlarge-screen: 1440px;
 $large-screen-up: 1201px;
 $large-screen: 1200px;
@@ -76,7 +92,7 @@ $medium-and-down: "only screen and (max-width : #{$medium-screen})";
 $small-and-down: "only screen and (max-width : #{$small-screen})";
 
 // Media Query Map
-$breakpoints: (
+$bpoints: (
     'xlarge-and-up'   : $xlarge-and-up,
     'large-and-up'    : $large-and-up,
     'large-only'      : $large-only,
@@ -89,9 +105,9 @@ $breakpoints: (
 // media query 'respond' mixin
 @mixin respond($name) {
   // If the key exists in the map
-  @if map-has-key($breakpoints, $name) {
+  @if map-has-key($bpoints, $name) {
     // Prints a media query based on the value
-    @media #{map-get($breakpoints, $name)} {
+    @media #{map-get($bpoints, $name)} {
       @content;
     }
   }

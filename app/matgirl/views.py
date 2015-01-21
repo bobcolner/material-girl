@@ -40,4 +40,4 @@ def add_numbers():
 
 @matgirl.route('/typeset')
 def typeset():
-    return render_template('matgirl/sassline.html')
+    return render_template('matgirl/sassline_partial.html')

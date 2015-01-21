@@ -19,6 +19,6 @@ H1 Style Notes
 // BEM: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
 // BEM macros: https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321
 
-
+cd ~/Documents/material-girl/assets/static/css
 sass --watch ~/Documents/material-girl/assets/static/scss/master.scss:master.css
 

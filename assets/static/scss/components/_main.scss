@@ -20,15 +20,25 @@ $header_height: 10 rem;
     right: 0;
     bottom: 0;
     width: 100%;
-    @include respond('medium-only') {
-        width: 70%;
-    }
-    @include respond('large-and-up') {
-        width: 75%;
-    }
+    // @include respond('medium-only') {
+    //     width: 70%;
+    // }
+    // @include respond('large-and-up') {
+    //     width: 75%;
+    // }
     @include part(header) {
-        background-color: color('green','darken-2');
-        height: $header_height;
+        margin-top: 2rem;
+        padding-bottom: 2rem;
+        color: color('grey','lighten-4');
+        @include sassline($fontsize: alpha, $font: $headingtype, $lineheight: 3, $below: 1, $breakpoint: all);
+        text-align: center;
+    }
+    @include part(footer) {
+        margin-top: 2rem;
+        padding-bottom: 2rem;
+        color: color('grey','lighten-4');
+        @include sassline(gamma, $headingtype, 3, 1, all);
+        text-align: center;
     }
 }
 
@@ -42,48 +52,44 @@ $header_height: 10 rem;
     padding: 0;
     margin: 0;
     width: 0;
-    @include respond('medium-only') {
-        width: 30%;
-    }
-    @include respond('large-and-up') {
-        width: 25%;
-    }
+    // @include respond('medium-only') {
+    //     width: 30%;
+    // }
+    // @include respond('large-and-up') {
+    //     width: 25%;
+    // }
     @include part(header) {
         background-color: color('blue','darken-2');
         height: $header_height;
     }
 }
 
-
 @include component(paper) {
     background-color: color('grey','lighten-3');
-    @extend %z-depth-1-half;
+    @extend %z-depth-1;
     z-index: 2;
     border-radius: 3px;
-    padding: 3em;
+    margin-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2em;
     width: 96%;
-    @include respond('medium-only') {
-        width: 92%;
+    @include breakpoint(break-3) {
+        @include maxwidth(3);
+        margin-right: 2%;
     }
-    @include respond('large-and-up') {
-        width: 85%;
-        max-width: 60em;
-        max-width: 45em;
+    @include breakpoint(break-4) {
+        @include maxwidth(4);
+        
     }
-    @include option(first) {
-        margin-top: 4em;
-    }
-    @include option(filler-short) {
-        height: 60px;
-    }
-    @include option(filler-med) {
-        height: 120px;
-    }
-    @include option(filler-long) {
-        height: 300px;
+    // @include respond('medium-only') {
+    //     width: 96%;
+    // }
+    // @include respond('large-and-up') {
+    //     width: 96%;
+    //     max-width: 50em;
+    // }
+    @include option(filler) {
+        height: 200px;
     }
 }
 

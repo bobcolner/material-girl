@@ -1,9 +1,6 @@
-                                                       	
+        
 @charset "UTF-8"; 
  
-// Materialize
-@import "../bower_components/materialize/sass/materialize"; 
-
 // CSStyle macros
 @import "../bower_components/csstyle/csstyle";
 
@@ -12,13 +9,15 @@
 
 // SCUT Lib
 // @import "../bower_components/scut/dist/scut";
- 
-// Over-rides
+
+// Materialize
+@import "../bower_components/materialize/sass/materialize"; 
+ // Over-rides
 @import "utilities/or_variables";
 
+// Typesetting
+@import "utilities/sassline/style"; 
 // @import "utilities/mod_scale";
  
 // Main Components
 @import "components/main";
-
-@import "utilities/sassline/style";
