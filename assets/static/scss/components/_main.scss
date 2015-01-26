@@ -1,111 +1,98 @@
 html, body {
-    z-index: 0;
     padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
 }
-
-$header_height: 10 rem;
-
-@include component(main) {
-    background-color: color('green','lighten-1');
-    @extend %z-depth-1-half;
-    z-index: 2;
-    position: absolute;    
-    overflow: auto;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+.app {
+    display: table;
+    height: 100%;
     width: 100%;
-    // @include respond('medium-only') {
-    //     width: 70%;
-    // }
-    // @include respond('large-and-up') {
-    //     width: 75%;
-    // }
-    @include part(header) {
-        margin-top: 2rem;
-        padding-bottom: 2rem;
-        color: color('grey','lighten-4');
-        @include sassline($fontsize: alpha, $font: $headingtype, $lineheight: 3, $below: 1, $breakpoint: all);
-        text-align: center;
-    }
-    @include part(footer) {
-        margin-top: 2rem;
-        padding-bottom: 2rem;
-        color: color('grey','lighten-4');
-        @include sassline(gamma, $headingtype, 3, 1, all);
-        text-align: center;
-    }
 }
 
-@include component(sidenav) {
-    background-color: color('blue','lighten-1');
-    position: absolute;
-    overflow: auto;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    padding: 0;
-    margin: 0;
-    width: 0;
-    // @include respond('medium-only') {
-    //     width: 30%;
-    // }
-    // @include respond('large-and-up') {
-    //     width: 25%;
-    // }
-    @include part(header) {
-        background-color: color('blue','darken-2');
-        height: $header_height;
+%brand {
+    font-family: "Quicksand";
+    font-weight: 700;
+    letter-spacing: -4px;
+    span {
+        font-weight: 300;
+        letter-spacing: -3px;
+    }
+    background-color: map-get($flatui, 'grey-1');
+    color: map-get($flatui, 'green-dark');
+    vertical-align: center;
+    text-align: center;
+}
+
+@include component(header) {
+    @extend %z-depth-1;
+    z-index: 3;
+    @extend %brand;
+    font-size: 2.5em;
+    display: table-row;
+    position: fixed;
+    width: 100%;
+    span {
+        font-weight: 300;
+        letter-spacing: -3px;
+    }
+}
+@include component(main) {
+    display: table;
+    height: 100%;
+    width: 100%;
+    @include part(sidebar) {
+        background: map-get($flatui, 'grey-2');
+        display: table-cell;
+        z-index: 1;
+        width: 4em;
+        @include respond('large-and-up') {
+            width: 14em;
+        }
+        ul {
+            display: table;
+            margin-top: 2em;
+            padding-left: .3em;
+            font-size: 2.5em;
+            position: fixed;
+        }
+    }
+    @include part(content) {
+        background-color: map-get($flatui, 'green-dark');
+        display: table-cell;
+        @extend %z-depth-1;
+        z-index: 2;
+    }
+    @include part(footer) {
+        background: map-get($flatui, 'grey-1');
+        @extend %brand;
+        font-size: 1.5em;
+        @extend %z-depth-1;
+        z-index: 3;
+        display: table-row;
+        height: 2em;   
     }
 }
 
 @include component(paper) {
-    background-color: color('grey','lighten-3');
+    background-color: map-get($flatui, 'grey-1');
     @extend %z-depth-1;
     z-index: 2;
     border-radius: 3px;
+    padding: 0;
     margin-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
     width: 96%;
-    @include breakpoint(break-3) {
-        @include maxwidth(3);
-        margin-right: 2%;
+    @include option(first) {
+        margin-top: 6rem;
     }
-    @include breakpoint(break-4) {
-        @include maxwidth(4);
-        
-    }
-    // @include respond('medium-only') {
-    //     width: 96%;
-    // }
-    // @include respond('large-and-up') {
-    //     width: 96%;
-    //     max-width: 50em;
-    // }
     @include option(filler) {
         height: 200px;
     }
 }
 
-@include component(newpost) {
-    position: fixed;
-    left: 1em;
-    top: 3em;
-    z-index: 4;
-    @include part(button) {
-        position: relative;
-        bottom: 26px;
-        @include respond('medium-and-up') {
-            display: none;
-        }
-    }
-}
+
 
 // @include component(ptxt) {
 //     @include body-content-scale($page-id: 'csstyle', $line-height: 1.25)

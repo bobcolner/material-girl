@@ -57,7 +57,6 @@
 // /*** Global ***/
 
 // // Media Query Ranges
-//  Screen sizes
 // $xlarge-screen: 1440px;
 // $large-screen-up: 1201px;
 // $large-screen: 1200px;
@@ -65,14 +64,6 @@
 // $medium-screen: 992px;
 // $small-screen-up: 601px;
 // $small-screen: 600px;
-
-$breakpoints: (
-  break-0: 0,     // 0px       Mobile first
-  break-1: 640,   // 640px   ~ Small tablet up
-  break-2: 800,   // 800px   ~ Large tablet up
-  break-3: 1024,  // 1024px  ~ Desktop up
-  break-4: 1600   // 1600px  ~ Large desktop up
-);
 
 $xlarge-screen: 1440px;
 $large-screen-up: 1201px;
@@ -135,8 +126,6 @@ $bpoints: (
 
 
 // /*** SideNav ***/
-
-
 
 // /*** Tables ***/
 // $table-border-color: #d0d0d0;

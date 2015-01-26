@@ -6,7 +6,6 @@
 
 // Google Color Palette defined: http://www.google.com/design/spec/style/color.html
 
-
 $materialize-red: (
   "lighten-5":  #fdeaeb,
   "lighten-4":  #f8c1c3,
@@ -360,39 +359,58 @@ $colors: (
   "shades": $shades
 );
 
+$flatui: (
+  "green-light": #2ECC71,
+  "green-dark": #27AE60,
+  "blue-light": #3498DB,
+  "blue-dark": #2980B9,
+  "red-light": #E74C3C,
+  "red-dark": #C0392B,
+  "purple-light": #9B59B6,
+  "purple-dark": #8E44AD,
+  "slate-light": #34495E,
+  "slate-dark": #2C3E50,
+  "yellow-light": #F1C40F,
+  "yellow-dark": #F39C12,
+  "orange-light": #E67E22,
+  "orange-dark": #D35400,
+  "grey-1": #ECF0F1,
+  "grey-2": #BDC3C7,
+  "grey-3": #95A5A6,
+  "grey-4": #7F8C8D
+);
 
 // Color Classes --disabled
-
-@each $color_name, $color in $colors {
-  @each $color_type, $color_value in $color {
-    @if $color_type == "base" {
-      .#{$color_name} {
-        background-color: $color_value !important;
-      }
-      .#{$color_name}-text {
-        color: $color_value !important;
-      }
-    }
-    @else {
-      .#{$color_name}.#{$color_type} {
-        background-color: $color_value !important;
-      }      
-      .#{$color_name}-text.text-#{$color_type} {
-        color: $color_value !important;
-      }
-    }
-  }
-}
+// @each $color_name, $color in $colors {
+//   @each $color_type, $color_value in $color {
+//     @if $color_type == "base" {
+//       .#{$color_name} {
+//         background-color: $color_value !important;
+//       }
+//       .#{$color_name}-text {
+//         color: $color_value !important;
+//       }
+//     }
+//     @else {
+//       .#{$color_name}.#{$color_type} {
+//         background-color: $color_value !important;
+//       }      
+//       .#{$color_name}-text.text-#{$color_type} {
+//         color: $color_value !important;
+//       }
+//     }
+//   }
+// }
 
 // Shade classes
-@each $color, $color_value in $shades {
-  .#{$color} {
-    background-color: $color_value !important;
-  }
-  .#{$color}-text {
-    color: $color_value !important;
-  }
-}
+// @each $color, $color_value in $shades {
+//   .#{$color} {
+//     background-color: $color_value !important;
+//   }
+//   .#{$color}-text {
+//     color: $color_value !important;
+//   }
+// }
 
 
 // usage: color("name_of_color", "type_of_color")

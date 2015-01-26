@@ -26,22 +26,21 @@
 
 <body id="csstyle">
     {% block app %}
-    <div class="app">
-        <div class="header">Quant<span>Clarity</span></div>
-        <div class="main">
-            <div class="main__sidebar">
-                <ul>
-                    <li><a href="#!"><i class="mdi-action-account-box"></i></a></li>
-                    <li><a href="#!"><i class="mdi-action-assessment"></i></a></li>
-                    <li><a href="#!"><i class="mdi-action-book"></i></a></li>
-                    <li><a href="#!"><i class="mdi-action-settings-applications"></i></a></li>
-                    <li><a href="#!"><i class="mdi-action-info"></i></a></li>
-                </ul>
-            </div>
-            <div class="main__content">{% block content %}{% endblock %}</div>
-        </div>
-        <div class="main__footer">Quant<span>Clarity @ 2015</div>
+    <div class="sidenav">
+        <ul>
+            <li><a href="#!"><i class="mdi-action-account-box"></i></a></li>
+            <li><a href="#!"><i class="mdi-action-assessment"></i></a></li>
+            <li><a href="#!"><i class="mdi-action-book"></i></a></li>
+            <li><a href="#!"><i class="mdi-action-settings-applications"></i></a></li>
+            <li><a href="#!"><i class="mdi-action-info"></i></a></li>
+        </ul>
     </div>
+    <div class="main">
+        <div class="main__header">Quant<span>Clarity</span></div>
+        {% block content %}{% endblock %}
+        <div class="main__footer">QuantClarity @ 2015</div>
+    </div>
+
     {% endblock app %}
     <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.js') }}"></script>
