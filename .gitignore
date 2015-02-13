@@ -93,6 +93,9 @@ docs/_build/
 # PyBuilder
 target/
 
-# NPM / Bower
+# NPM / Bower / Web Frontend
 ######################
 bower_components/
+node_modules/
+.sass-cache/
+
