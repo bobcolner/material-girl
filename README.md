@@ -91,3 +91,10 @@ cd app/static/ && bower install --save && cd ../..
 
 ### Docker 
 docker run -p 5000:5000 -it --rm --name="material-girl" -v ~/app:/app -w /app -e "MAIL_USERNAME=..." -e "MAIL_PASSWORD=..." -e "FLASKY_ADMIN=..." python:2 /bin/bash
+ 
+docker run -p 8888:8888 -it --rm -v ~/app:/app -w /app alankang/anaconda2:latest /bin/bash
+ipython notebook --ip 0.0.0.0
+
+### SASS
+cd app/assets/static/scss
+sass --watch master.scss:../css/master.css

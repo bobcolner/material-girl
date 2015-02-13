@@ -4,74 +4,57 @@ html, body {
     width: 100%;
     height: 100%;
 }
-.app {
-    display: table;
-    height: 100%;
-    width: 100%;
-}
-
-%brand {
-    font-family: "Quicksand";
-    font-weight: 700;
-    letter-spacing: -4px;
-    span {
-        font-weight: 300;
-        letter-spacing: -3px;
-    }
-    background-color: map-get($flatui, 'grey-1');
-    color: map-get($flatui, 'green-dark');
-    vertical-align: center;
-    text-align: center;
-}
 
 @include component(header) {
-    @extend %z-depth-1;
-    z-index: 3;
+    background-color: $primary-color;
+    color: map-get($flatui, 'grey-1');
     @extend %brand;
-    font-size: 2.5em;
-    display: table-row;
-    position: fixed;
+    @include h1-scale();
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     width: 100%;
-    span {
-        font-weight: 300;
-        letter-spacing: -3px;
-    }
 }
+
 @include component(main) {
     display: table;
     height: 100%;
     width: 100%;
+    
     @include part(sidebar) {
-        background: map-get($flatui, 'grey-2');
+        background: $secondary-color;
         display: table-cell;
         z-index: 1;
-        width: 4em;
+        width: 4rem;
         @include respond('large-and-up') {
-            width: 14em;
+            width: 16rem;
         }
         ul {
+            li {
+                color: map-get($flatui, 'grey-1');
+            }
             display: table;
-            margin-top: 2em;
-            padding-left: .3em;
-            font-size: 2.5em;
             position: fixed;
+            text-align: right;
+            margin-top: 3rem;
+            padding-left: .2rem;
+            font-size: 2.5rem;            
+            width: 14rem;
+            // text-align: center;
         }
     }
+    
     @include part(content) {
-        background-color: map-get($flatui, 'green-dark');
+        background-color: map-get($flatui, 'grey-1');
         display: table-cell;
         @extend %z-depth-1;
         z-index: 2;
     }
-    @include part(footer) {
-        background: map-get($flatui, 'grey-1');
-        @extend %brand;
-        font-size: 1.5em;
-        @extend %z-depth-1;
-        z-index: 3;
-        display: table-row;
-        height: 2em;   
-    }
+}
+
+
+@include component(login) {
+    padding-top: 2rem;
+    margin-bottom: 4rem;
 }
 
 @include component(paper) {
@@ -79,19 +62,34 @@ html, body {
     @extend %z-depth-1;
     z-index: 2;
     border-radius: 3px;
-    padding: 0;
-    margin-bottom: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    width: 96%;
+    display: inline-block;
+    padding: 2rem;
+    margin: 2rem;
+    // margin-bottom: 2rem;
+    // margin-left: auto;
+    // margin-right: auto;
+    width: 20em;
     @include option(first) {
-        margin-top: 6rem;
+        margin-top: 6rrem;
     }
     @include option(filler) {
-        height: 200px;
+        height: 20em;
     }
 }
 
+%brand {
+    font-family: "Quicksand";
+    font-weight: 700;
+    letter-spacing: -3px;
+    span { 
+        font-weight: 300;
+        @include respond('small-and-down') {
+            font-weight: 400;
+        }
+     }
+    vertical-align: center;
+    text-align: center;
+}
 
 
 // @include component(ptxt) {

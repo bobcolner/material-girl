@@ -18,7 +18,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Quicksand:300,300i,400,400i'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700">
     <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Latin+Modern+Mono:300,400,700">
     <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Lora:400,400i,700,700i">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/master.css') }}">
@@ -26,21 +26,20 @@
 
 <body id="csstyle">
     {% block app %}
-    <div class="app">
-        <div class="header">Quant<span>Clarity</span></div>
-        <div class="main">
-            <div class="main__sidebar">
-                <ul>
-                    <li><a href="#!"><i class="mdi-action-account-box"></i></a></li>
-                    <li><a href="#!"><i class="mdi-action-assessment"></i></a></li>
-                    <li><a href="#!"><i class="mdi-action-book"></i></a></li>
-                    <li><a href="#!"><i class="mdi-action-settings-applications"></i></a></li>
-                    <li><a href="#!"><i class="mdi-action-info"></i></a></li>
-                </ul>
-            </div>
-            <div class="main__content">{% block content %}{% endblock %}</div>
+    <div class="main">
+        <div class="main__sidebar">
+            <ul>
+                <li><a href="{{ url_for('main.user', username=current_user.username) }}">ACCOUNT</a><i class="mdi-action-account-box"></i></li>
+                <li><a href="#!">PLACE</a><i class="mdi-action-assessment"></i></li>
+                <li><a href="#!">PLACE</a><i class="mdi-action-book"></i></li>
+                <li><a href="#!">PLACE</a><i class="mdi-action-settings-applications"></i></li>
+                <li><a href="#!">PLACE</a><i class="mdi-action-info"></i></li>
+            </ul>
         </div>
-        <div class="main__footer">Quant<span>Clarity @ 2015</div>
+        <div class="main__content">
+            <div class="header">Quant<span>Clarity</span></div>
+            {% block content %}{% endblock %}
+        </div>
     </div>
     {% endblock app %}
     <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>

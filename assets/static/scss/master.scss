@@ -1,4 +1,4 @@
-     
+                                                
 @charset "UTF-8"; 
  
 // CSStyle macros
@@ -15,12 +15,14 @@
 @import "../bower_components/materialize/sass/components/mixins";
 // @import "../bower_components/materialize/sass/components/color";
 @import "utilities/or_color";
-@import "../bower_components/materialize/sass/components/variables";
+// @import "../bower_components/materialize/sass/components/variables";
 @import "utilities/or_variables";
 @import "../bower_components/materialize/sass/components/normalize";
-@import "../bower_components/materialize/sass/components/global";
+// @import "../bower_components/materialize/sass/components/global";
+@import "utilities/or_global";
 @import "../bower_components/materialize/sass/components/icons-material-design";
-@import "../bower_components/materialize/sass/components/grid";
+// @import "../bower_components/materialize/sass/components/grid";
+@import "utilities/or_grid";
 // @import "../bower_components/materialize/sass/components/navbar";
 // @import "../bower_components/materialize/sass/components/roboto";
 // @import "../bower_components/materialize/sass/components/typography";
@@ -46,8 +48,8 @@
 
 // Typesetting
 // @import "utilities/sassline/style"; 
-// @import "utilities/mod_scale";
+@import "utilities/mod_scale";
 
 // Main Components
 @import "components/main";
-            
+   

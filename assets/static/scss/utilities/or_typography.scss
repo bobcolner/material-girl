@@ -4,25 +4,27 @@ a {
 
 html{
   line-height: 1.5;
+  font-size: 14px;
   
-  @media only screen and (min-width: 0) {
-    font-size: 14px;
-  }
+  // @media only screen and (min-width: 0) {
+  //   font-size: 14px;
+  // }
   
-  @media only screen and (min-width: $medium-screen) {
-    font-size: 14.5px;
-  }
+  // @media only screen and (min-width: $medium-screen) {
+  //   font-size: 14.5px;
+  // }
   
-  @media only screen and (min-width: $large-screen) {
-    font-size: 15px;
-  }
+  // @media only screen and (min-width: $large-screen) {
+  //   font-size: 15px;
+  // }
   
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
+  // font-family: "Lora", sans-serif;
+  font-family: "Latin Modern Mono";
+  font-weight: 400;
   color: $off-black;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
+	font-weight: 700;
 }
 
 // Header Styles
